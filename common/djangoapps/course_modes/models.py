@@ -69,7 +69,7 @@ class CourseMode(models.Model):
     # Historical note: We used to allow users to choose from several prices, but later
     # switched to using a single price.  Although this field is called `min_price`, it is
     # really just the price of the course.
-    min_price = models.IntegerField(default=0, verbose_name=_("Price"))
+    min_price = models.DecimalField(default=0.0, verbose_name=_("Price"), max_digits=30, decimal_places=2)
 
     # the currency these prices are in, using lower case ISO currency codes
     currency = models.CharField(default=u"usd", max_length=8)
