@@ -6260,7 +6260,7 @@ msgstr ""
 #: openedx/core/djangoapps/ace_common/templates/ace_common/edx_ace/common/base_body.html
 #: themes/red-theme/lms/templates/ace_common/edx_ace/common/base_body.html
 msgid "All rights reserved"
-msgstr "Все права защищены"
+msgstr "All rights reserved."
 
 #. Translators:  This text is bound to the HTML 'title' element of the page
 #. and appears
@@ -9840,7 +9840,7 @@ msgstr "Перейдите на %(platform_name)s Главную страниц�
 #: openedx/core/djangoapps/ace_common/templates/ace_common/edx_ace/common/base_body.html
 #: themes/red-theme/lms/templates/ace_common/edx_ace/common/base_body.html
 msgid "Sign In"
-msgstr "Вход"
+msgstr "Sign In"
 
 #: openedx/core/djangoapps/ace_common/templates/ace_common/edx_ace/common/base_body.html
 #: themes/red-theme/lms/templates/ace_common/edx_ace/common/base_body.html
@@ -20424,7 +20424,7 @@ msgstr "Авторское право"
 
 #: themes/stanford-style/lms/templates/footer.html
 msgid "Copyright {year}. All rights reserved."
-msgstr "Copyright {year}. Все права защищены."
+msgstr "Copyright {year}. All rights reserved."
 
 #: themes/stanford-style/lms/templates/index.html
 msgid "For anyone, anywhere, anytime"

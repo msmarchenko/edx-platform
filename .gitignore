@@ -11,6 +11,12 @@ requirements/edx/private.in
 requirements/edx/private.txt
 lms/envs/private.py
 cms/envs/private.py
+lms/envs/production.py
+cms/envs/production.py
+lms/envs/tutor/*
+cms/envs/tutor/*
+
+
 # end-noclean
 
 ### Python artifacts
