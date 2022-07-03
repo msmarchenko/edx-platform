@@ -496,6 +496,8 @@ $courseware-navigation-color: theme-color("primary") !default;
 // homepage, onboarding, and course discovery
 $homepage__header--gradient__color--alpha: lighten($gray, 15%) !default;
 $homepage__header--gradient__color--bravo: saturate($gray, 30%) !default;
+$homepage__header--gradient__color--robbo_green_light: $green-l1 !default;
+$homepage__header--gradient__color--robbo_green_dark: $green-s2 !default;
 $homepage__header--background: lighten($gray, 15%) !default;
 $homepage-background: rgb(252, 252, 252) !default;
 $course-card-height: ($baseline*18) !default;
@@ -568,3 +570,5 @@ $darkGrey: rgb(136, 145, 161) !default;
 $extraDarkGrey: #3d4043 !default;
 $lightGrey1: $gray-l3 !default;
 $paleYellow: #fffcf1 !default;
+
+$robbo-primary-color:#019f39;
