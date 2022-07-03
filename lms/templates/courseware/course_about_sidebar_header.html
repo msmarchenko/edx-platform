@@ -11,6 +11,7 @@ from six import text_type
 
 <header>
   % if static.get_value('course_about_show_social_links', True):
+    % if False:
   <div class="social-sharing">
     <div class="sharing-message">${_("Share with friends and family!")}</div>
     ## TODO: this should probably be an overrideable block,
@@ -64,5 +65,6 @@ from six import text_type
         <span class="icon fa fa-envelope" aria-hidden="true"></span><span class="sr">${_("Email someone to say you've enrolled in this course")}</span>
       </a>
   </div>
-  % endif
+   % endif
+  %endif 
 </header>
