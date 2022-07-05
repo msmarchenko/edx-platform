@@ -40,6 +40,15 @@ $fg-min-width: 810px !default;
 // ----------------------------
 // #COLORS
 // ----------------------------
+
+//Robbo colors 
+
+$robbo-primary-color:#019f39;
+$link-color: $robbo-primary-color;
+$robbo-link-color: $robbo-primary-color !important;
+
+/////////////////
+
 $transparent: rgba(0, 0, 0, 0) !default; // used when color value is needed for UI width/transitions but element is transparent
 
 $black-t0:  rgba($black, 0.125) !default;
@@ -365,6 +374,48 @@ $font-bold: 700 !default;
 $m-base-font-size: em(15) !default;
 $support-form-base-font-size: 16px;
 
+/* Robbo fonts */
+ 
+@font-face {
+    font-family: 'Robbo Proxima';
+    font-weight: 300;
+    src: url('#{$static-path}/fonts/Proxima/Proxima-Nova-Light.otf');
+    
+  }
+  
+  
+  
+  @font-face {
+    font-family: 'Robbo Proxima';
+    font-weight: 400;
+    src: url('#{$static-path}/fonts/Proxima/Proxima-Nova-Regular.otf');
+    
+  }
+  
+  
+  
+  @font-face {
+    font-family: 'Robbo Proxima';
+    font-weight: 600;
+    src: url('#{$static-path}/fonts/Proxima/Proxima-Nova-Semibold.otf');
+  }
+  
+  
+  
+  @font-face {
+    font-family: 'Robbo Proxima';
+    font-weight: 700;
+    src: url('#{$static-path}/fonts/Proxima/Proxima-Nova-Bold.otf');
+    
+  }
+
+  $font-family-robbo-proxima: 'Robbo Proxima',"Helvetica Neue",Helvetica,Arial,sans-serif;
+  $font-family-sans-serif: 'Robbo Proxima',"Helvetica Neue",Helvetica,Arial,sans-serif;
+  
+  /**********************************************************************/
+
+
+
 // ----------------------------
 // #TIMING
 // ----------------------------
@@ -426,7 +477,8 @@ $button-bg-color: transparent !default;
 $button-bg-hover-color: $white !default;
 
 // action - primary
-$action-primary-bg: $m-blue-d3 !default;
+//$action-primary-bg: $m-blue-d3 !default;
+$action-primary-bg: $robbo-primary-color !default;
 $action-primary-fg: $white !default;
 $action-primary-shadow: $m-blue-d4 !default;
 $action-primary-focused-bg: $m-blue-d1 !default;
@@ -456,7 +508,8 @@ $action-secondary-disabled-fg: $white !default;
 // actions - misc
 $link-hover: $uxpl-blue-hover-active !default; // from our Pattern Library http://ux.edx.org/design_elements/colors/
 $site-status-color: $pink !default;
-$button-color: theme-color("primary") !default;
+/* $button-color: theme-color("primary") !default; */
+$button-color: $robbo-primary-color !default;
 $button-archive-color: rgb(238, 238, 238) !default; // #eeeeee
 
 // larger, random elements

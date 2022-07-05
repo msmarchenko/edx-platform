@@ -28,7 +28,8 @@
 
       // override needed for poorly scoped font-family styling on p a:link {}
       a {
-        font-family: $font-family-sans-serif;
+         font-family: $font-family-sans-serif; 
+        /* font-family:  $font-family-robbo-proxima; */
       }
     }
 
@@ -75,12 +76,14 @@
           margin-right: ($baseline*0.75);
 
           a {
-            color: tint($black, 20%);
+           /* color: tint($black, 20%); */
+           color: $robbo-link-color;
 
             &:hover,
             &:focus,
             &:active {
-              color: $link-color;
+             /* color: $link-color; */
+             color: $robbo-link-color;
             }
           }
 
