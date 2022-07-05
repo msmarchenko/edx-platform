@@ -35,6 +35,11 @@ $fg-min-width: 900px;
 $f-sans-serif: 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
 $f-monospace: 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;
 
+//+Robbo colors 
+//==================
+
+$robbo-primary-color:#019f39;
+
 // +Colors - Utility
 // ====================
 $transparent: rgba(0, 0, 0, 0) !default; // used when color value is needed for UI width/transitions but element is transparent
@@ -242,7 +247,8 @@ $ui-action-primary-color-focus: $blue-s1 !default;
 
 $ui-link-color: $blue-u2 !default;
 $ui-link-color-focus: $blue-s1 !default;
-$link-color: $ui-link-color;
+//$link-color: $ui-link-color;
+$link-color: $robbo-primary-color;
 
 // +Specific UI
 // ====================
