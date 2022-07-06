@@ -156,7 +156,7 @@
 
         // Sign in, Register and Shopping Cart buttons
         .btn {
-          border: 1px solid theme-color("primary");
+          border: 1px solid $robbo-primary-color;
           padding: $baseline/4 $baseline;
           border-radius: $baseline/4;
           cursor: pointer;
