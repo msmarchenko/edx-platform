@@ -264,7 +264,7 @@
     .organization-logo {
       max-width: 80%;
       position: absolute;
-      top: 50%;
+      top: 10%; /* 50% */
 
       @include left(50%);
 
@@ -282,14 +282,20 @@
     }
 
     .signatory {
-      display: inline-block;
+      display: flex; /* inline-block */
       vertical-align: middle;
       width: calc(100% - 1rem);
+
+      flex-direction: row; 
+      align-items: center;
+      align-content: center;
+    
 
       @include make-col(12);
 
       @include media-breakpoint-up(md) {
-        @include make-col(4);
+        @include make-col(4); 
+       /*@include make-col(2); */
       }
 
       @include media-breakpoint-up(lg) {
@@ -297,13 +303,15 @@
       }
 
       @include media-breakpoint-up(xl) {
-        @include make-col(3);
+       /* @include make-col(3); */
+        @include make-col(12); /* 6 */
       }
 
       .signatory-signature {
+       /* display: inline-block; */
         display: block;
         max-width: 100%;
-        max-height: rem(100);
+        max-height: rem(196);
         padding: map-get($spacing-vertical, small) map-get($spacing-horizontal, small);
       }
     }

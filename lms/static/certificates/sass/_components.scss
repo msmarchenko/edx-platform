@@ -221,14 +221,15 @@
 
   position: relative;
   top: -(map-get($spacing-vertical, base));
-  border-top: rem(4) solid $cert-base-color;
+ /* border-top: rem(4) solid $cert-base-color; */
 
   // type
   .accomplishment-type {
     @include text-align(center);
 
     margin-top: -(map-get($spacing-vertical, large));
-    margin-bottom: map-get($spacing-vertical, base);
+   /* margin-bottom: map-get($spacing-vertical, base); */
+    margin-bottom: 5px;
   }
 
   .accomplishment-type-label,
@@ -240,18 +241,20 @@
     @include make-col(10);
 
     margin: 0 auto;
-    font-weight: 600;
+   /* font-weight: 600; */
   }
 
   .accomplishment-type-symbol {
-    @include size(rem(100));
+   /* @include size(rem(100)); */
+    width:20.25rem;
+    height:6.25rem;
 
     margin: 0 auto map-get($spacing-vertical, small) auto;
   }
 
   // statement
   .accomplishment-statement {
-    @extend %rendering-section;
+   /*  @extend %rendering-section; */
 
     @include text-align(center);
   }
@@ -301,7 +304,7 @@
 
     .signatory-signature {
       display: block;
-      margin: 0 auto map-get($spacing-vertical, x-small) auto;
+      margin: 0 15px map-get($spacing-vertical, x-small) 140px; /* 0 auto map-get($spacing-vertical, x-small) auto */
       box-sizing: border-box;
     }
 
@@ -314,12 +317,14 @@
       margin-bottom: map-get($spacing-vertical, xx-small);
       margin-top: 0;
       font-weight: 400;
+      display: inline-block;
     }
 
     .signatory-credentials {
       @extend %copy-micro;
 
       margin-top: 0;
+      display: inline-block;
 
       .role,
       .organization {
@@ -473,7 +478,8 @@
     .accomplishment-statement-lead,
     .accomplishment-recipient,
     .accomplishment-course {
-      font-family: $font-family-serif;
+      /* font-family: $font-family-serif; */
+       font-family: $font-family-robbo-proxima
     }
 
     .accomplishment-recipient,
@@ -499,10 +505,10 @@
     }
 
     // hide the fancy
-    .accomplishment-signatories .signatory-signature,
+   /* .accomplishment-signatories .signatory-signature,
     .accomplishment-type-symbol {
       display: none;
-    }
+    } */
   }
 }
 

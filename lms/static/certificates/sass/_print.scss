@@ -191,10 +191,11 @@
 
   .accomplishment-rendering {
     top: 0 !important;
-    border: rem(1) solid $gray-back;
-    border-top: rem(2) solid $cert-base-color;
+    /* border: rem(1) solid $gray-back; */
+    /* border-top: rem(2) solid $cert-base-color; */
     box-shadow: none;
-    padding: map-get($spacing-vertical, small) map-get($spacing-horizontal, mid-large);
+   /* padding: map-get($spacing-vertical, small) map-get($spacing-horizontal, mid-large); */
+     padding: 1px 1px;
 
     @include rtl {
       display: block !important;
@@ -205,7 +206,10 @@
     }
 
     .accomplishment-type-symbol {
-      @include size(rem(75));
+     /*  @include size(rem(75)); */
+
+      width:15.25rem;
+      height:3rem;
 
       border: none !important;
     }
@@ -260,7 +264,8 @@
       }
 
       .signatory-signature {
-        height: map-get($spacing-vertical, small);
+       /* height: map-get($spacing-vertical, small); */
+        height: 6rem;
         max-width: 100%;
         margin-top: 0;
         padding-top: 0 !important;
