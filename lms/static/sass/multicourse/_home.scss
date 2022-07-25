@@ -18,7 +18,8 @@ $course-search-input-height: ($button-size);
     @include clearfix();
 
     background-size: cover;
-    background-image: $homepage-bg-image;
+   /* background-image: $homepage-bg-image; */
+    background-image: url("/static/images/main_back.png");
     box-shadow: 0 1px 0 0 $course-header-bg, inset 0 -1px 5px 0 $shadow-l1;
     overflow: hidden;
     padding: 0;
@@ -48,8 +49,8 @@ $course-search-input-height: ($button-size);
       @include transition(all 0.2s linear 0s);
 
       position: relative;
-      box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.5);
-      background: $white;
+      /* box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.5);
+      background: $white; */
       padding: ($baseline) ($baseline*1.5);
       min-height: ($baseline*6);
       vertical-align: top;
@@ -99,6 +100,7 @@ $course-search-input-height: ($button-size);
           margin-bottom: 0;
           text-shadow: 0 1px rgba(255, 255, 255, 0.6);
           text-transform: none;
+          color: white;
         }
 
         p {
@@ -107,6 +109,7 @@ $course-search-input-height: ($button-size);
           margin-bottom: 0;
           text-transform: none;
           font-style: italic;
+          color: white;
         }
       }
 
