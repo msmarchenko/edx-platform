@@ -163,13 +163,13 @@
 %btn-primary-blue {
   @extend %btn-primary;
 
-  background: $m-blue-d3;
+  background: $robbo-primary-color;
   color: $white;
 
   &:hover,
   &:active,
   &:focus {
-    background: $uxpl-blue-hover-active;
+    background: $robbo-green-color;
     color: $white;
   }
 

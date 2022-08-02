@@ -64,6 +64,20 @@ from six import string_types
   <header class="course-profile">
     <div class="intro-inner-wrapper">
       <div class="table">
+        % if get_course_about_section(request, course, "video"):
+        <a href="#video-modal" class="media" rel="leanModal">
+          <div class="hero">
+            <img src="${course_image_urls['large']}" alt="" />
+            <div class="play-intro"></div>
+          </div>
+        </a>
+        %else:
+        <div class="media">
+          <div class="hero">
+            <img src="${course_image_urls['large']}" alt="" />
+          </div>
+        </div>
+        % endif  
       <section class="intro">
         <div class="heading-group">
           <h1>
@@ -122,20 +136,6 @@ from six import string_types
         </div>
 
       </section>
-      % if get_course_about_section(request, course, "video"):
-      <a href="#video-modal" class="media" rel="leanModal">
-        <div class="hero">
-          <img src="${course_image_urls['large']}" alt="" />
-          <div class="play-intro"></div>
-        </div>
-      </a>
-      %else:
-      <div class="media">
-        <div class="hero">
-          <img src="${course_image_urls['large']}" alt="" />
-        </div>
-      </div>
-      % endif
     </div>
       </div>
   </header>
@@ -143,19 +143,6 @@ from six import string_types
 
   <div class="container">
 
-    <%block name="course_about_details">
-    <div class="details">
-      % if staff_access and studio_url is not None:
-        <div class="wrap-instructor-info studio-view">
-          <a class="instructor-info-action" href="${studio_url}">${_("View About Page in studio")}</a>
-        </div>
-      % endif
-
-      <div class="inner-wrapper">
-        ${clean_dangerous_html(get_course_about_section(request, course, "overview"))}
-      </div>
-    </div>
-    </%block>
 
     <div class="course-sidebar">
       <div class="course-summary">
@@ -164,13 +151,13 @@ from six import string_types
 
         <%block name="course_about_important_dates">
         <ol class="important-dates">
-          <li class="important-dates-item"><span class="icon fa fa-info-circle" aria-hidden="true"></span><p class="important-dates-item-title">${_("Course Number")}</p><span class="important-dates-item-text course-number">${course.display_number_with_default}</span></li>
+          <li class="important-dates-item"><!-- <span class="icon fa fa-info-circle" aria-hidden="true"></span> --> <p class="important-dates-item-title">${_("Course Number")}</p><span class="important-dates-item-text course-number">${course.display_number_with_default}</span></li>
           % if not course.start_date_is_still_default:
               <%
                   course_start_date = course.advertised_start or course.start
               %>
             <li class="important-dates-item">
-              <span class="icon fa fa-calendar" aria-hidden="true"></span>
+               <!-- <span class="icon fa fa-calendar" aria-hidden="true"></span> -->
               <p class="important-dates-item-title">${_("Classes Start")}</p>
               % if isinstance(course_start_date, string_types):
                   <span class="important-dates-item-text start-date">${course_start_date}</span>
@@ -190,7 +177,7 @@ from six import string_types
                 %>
 
             <li class="important-dates-item">
-                <span class="icon fa fa-calendar" aria-hidden="true"></span>
+                <!-- <span class="icon fa fa-calendar" aria-hidden="true"></span> -->
                 <p class="important-dates-item-title">${_("Classes End")}</p>
                   % if isinstance(course_end_date, string_types):
                       <span class="important-dates-item-text final-date">${course_end_date}</span>
@@ -211,7 +198,7 @@ from six import string_types
 
           %if course_price and (is_cosmetic_price_enabled):
             <li class="important-dates-item">
-              <span class="icon fa fa-money" aria-hidden="true"></span>
+              <!-- <span class="icon fa fa-money" aria-hidden="true"></span> -->
               <p class="important-dates-item-title">${_("Price")}</p>
               <span class="important-dates-item-text">${course_price}</span>
             </li>
@@ -220,7 +207,7 @@ from six import string_types
           % if pre_requisite_courses:
           <% prc_target = reverse('about_course', args=[text_type(pre_requisite_courses[0]['key'])]) %>
           <li class="prerequisite-course important-dates-item">
-            <span class="icon fa fa-list-ul" aria-hidden="true"></span>
+            <!-- <span class="icon fa fa-list-ul" aria-hidden="true"></span> -->
             <p class="important-dates-item-title">${_("Prerequisites")}</p>
             ## Multiple pre-requisite courses are not supported on frontend that's why we are pulling first element
             <span class="important-dates-item-text pre-requisite"><a href="${prc_target}">${pre_requisite_courses[0]['display']}</a></span>
@@ -235,7 +222,7 @@ from six import string_types
           % endif
 
           % if get_course_about_section(request, course, "prerequisites"):
-            <li class="important-dates-item"><span class="icon fa fa-book" aria-hidden="true"></span><p class="important-dates-item-title">${_("Requirements")}</p><span class="important-dates-item-text prerequisites">${get_course_about_section(request, course, "prerequisites")}</span></li>
+            <li class="important-dates-item"> <!-- <span class="icon fa fa-book" aria-hidden="true"></span> -->  <p class="important-dates-item-title">${_("Requirements")}</p><span class="important-dates-item-text prerequisites">${get_course_about_section(request, course, "prerequisites")}</span></li>
           % endif
         </ol>
         </%block>
@@ -264,6 +251,21 @@ from six import string_types
       % endif
     %endif
   </div>
+
+  <%block name="course_about_details">
+    <div class="details">
+      % if staff_access and studio_url is not None:
+        <div class="wrap-instructor-info studio-view">
+          <a class="instructor-info-action" href="${studio_url}">${_("View About Page in studio")}</a>
+        </div>
+      % endif
+
+      <div class="inner-wrapper">
+        ${clean_dangerous_html(get_course_about_section(request, course, "overview"))}
+      </div>
+    </div>
+  </%block>
+
 
   </div>
 </div>

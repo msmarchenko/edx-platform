@@ -187,19 +187,20 @@
     $third-stop:    grayscale($third-stop);
   }
 
-  border: 1px solid $border;
+ /* border: 1px solid $border;
   border-bottom: 1px solid $border-bottom;
   border-radius: 5px;
-  box-shadow: inset 0 1px 0 0 $inset-shadow;
+  box-shadow: inset 0 1px 0 0 $inset-shadow; */
   color: $color;
   display: inline-block;
   font-size: $textsize;
   font-weight: bold;
-  @include linear-gradient(top, $base-color 0%, $second-stop 50%, $third-stop 50%, $fourth-stop 100%);
+  /* @include linear-gradient(top, $base-color 0%, $second-stop 50%, $third-stop 50%, $fourth-stop 100%); */
+  background-color: $robbo-green-color;
   padding: $padding;
   text-align: center;
   text-decoration: none;
-  text-shadow: 0 -1px 1px $text-shadow;
+  /* text-shadow: 0 -1px 1px $text-shadow; */
 
   &:hover:not(:disabled) {
     $first-stop-hover:  adjust-color($base-color, $red: -13, $green: -15, $blue: -18);
@@ -215,10 +216,10 @@
     }
 
     cursor: pointer;
-    @include linear-gradient(top, $first-stop-hover  0%,
+    /* @include linear-gradient(top, $first-stop-hover  0%,
                                   $second-stop-hover 50%,
                                   $third-stop-hover  50%,
-                                  $fourth-stop-hover 100%);
+                                  $fourth-stop-hover 100%); */
   }
 
   &:active:not(:disabled),

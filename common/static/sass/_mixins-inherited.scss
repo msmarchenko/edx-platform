@@ -132,7 +132,7 @@
 
 // mixins - grandfathered
 @mixin button {
-  @include transition(background-color 0.15s, box-shadow 0.15s);
+ /* @include transition(background-color 0.15s, box-shadow 0.15s); */
 
   @extend %t-action3;
   @extend %t-strong;
