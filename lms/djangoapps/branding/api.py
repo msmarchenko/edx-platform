@@ -275,7 +275,7 @@ def _footer_navigation_links(language=settings.LANGUAGE_CODE):
     """Return the navigation links to display in the footer. """
     platform_name = configuration_helpers.get_value('platform_name', settings.PLATFORM_NAME)
     links = [
-        ("about", (marketing_link("ABOUT"), _("About"))),
+        #("about", (marketing_link("ABOUT"), _("About"))),
         ("enterprise", (
             marketing_link("ENTERPRISE"),
             _("{platform_name} for Business").format(platform_name=platform_name)
