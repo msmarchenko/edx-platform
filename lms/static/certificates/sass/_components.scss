@@ -44,9 +44,7 @@
   box-shadow: 0 rem(1) rem(2) 0 $gray-back;
   padding: map-get($spacing-vertical, small) map-get($spacing-horizontal, base);
   background: $white;
-  
-}
-
+ }
 
 .depth-base-focus {
   @extend %depth-base-focus;
@@ -208,6 +206,7 @@
 
   .accomplishment-summary {
     margin-bottom: 0;
+    //max-width: 80%;
   }
 }
 
@@ -238,25 +237,25 @@
 .accomplishment-rendering {
   @extend %depth-card;
 
-  background-image: url("/static/certificates/images/robbo_background.png"); 
+ /* background-image: url("/static/certificates/images/robbo_background.png"); */
 
   position: relative;
-  top: -(map-get($spacing-vertical, base));
+  //top: -(map-get($spacing-vertical, base));
  /* top: -20px;*/
   
-  border-top: rem(2) solid $cert-base-color; 
-  border-left: rem(2) solid $cert-base-color; 
+  /* border-top: rem(4) solid $cert-base-color; */
+  /*border-left: rem(2) solid $cert-base-color; 
 
   border-right: rem(4) outset $cert-base-color;
-  border-bottom: rem(4) outset $cert-base-color;
+  border-bottom: rem(4) outset $cert-base-color;*/
 
   // type
   .accomplishment-type {
     @include text-align(center);
 
     margin-top: -(map-get($spacing-vertical, large));
-   /* margin-bottom: map-get($spacing-vertical, base); */
-   margin-bottom: 1rem;
+    /* margin-bottom: map-get($spacing-vertical, base); */
+    margin-bottom: 5px;
   }
 
   .accomplishment-type-label,
@@ -268,18 +267,20 @@
     @include make-col(10);
 
     margin: 0 auto;
-    font-weight: 1000; /*600*/
+     /* font-weight: 600; */
   }
 
   .accomplishment-type-symbol {
-    @include size(rem(100));
+    /* @include size(rem(100)); */
+    width:20.25rem;
+    height:6.25rem;
 
     margin: 0 auto map-get($spacing-vertical, small) auto;
   }
 
   // statement
   .accomplishment-statement {
-    @extend %rendering-section;
+    /*  @extend %rendering-section; */
 
     @include text-align(center);
   }
@@ -302,7 +303,7 @@
   .accomplishment-course {
     @extend %rendering-accomplishment-line;
 
-    font-weight: 900; /*600*/
+    font-weight: 600; /*900*/
   }
 
   .accomplishment-course-description {
@@ -327,11 +328,12 @@
   .accomplishment-signatories {
     @extend %rendering-section;
 
-    float:right;
+    /*float:right;*/
 
     .signatory-signature {
       display: block;
-      margin: 0 auto map-get($spacing-vertical, x-small) auto;
+      margin: 0 15px map-get($spacing-vertical, x-small) 140px; 
+      /* 0 auto map-get($spacing-vertical, x-small) auto */
       box-sizing: border-box;
     }
 
@@ -343,16 +345,18 @@
     .signatory-name {
       margin-bottom: map-get($spacing-vertical, xx-small);
       margin-top: 0;
-      font-weight: 800; /*400*/
+      font-weight: 400; /*800*/
+      display: inline-block;
     }
 
     .signatory-credentials {
       @extend %copy-micro;
 
       margin-top: 0;
+      display: inline-block;
 
-      font-weight:800;
-      font-size: rem(20);
+      /*font-weight:800;
+      font-size: rem(20);*/
 
       .role,
       .organization {
@@ -520,7 +524,8 @@
     .accomplishment-statement-lead,
     .accomplishment-recipient,
     .accomplishment-course {
-      font-family: $font-family-serif;
+      /* font-family: $font-family-serif; */
+      font-family: $font-family-robbo-proxima
     }
 
     .accomplishment-recipient,

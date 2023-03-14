@@ -191,11 +191,12 @@
   }
 
   .accomplishment-rendering {
-    top: -70px !important; /*0*/
-    border: rem(1) solid $gray-back;
-    border-top: rem(2) solid $cert-base-color;
+    top: 0px !important; /*-70*/
+    /* border: rem(1) solid $gray-back; */
+    /* border-top: rem(2) solid $cert-base-color; */
     box-shadow: none;
-    padding: map-get($spacing-vertical, small) map-get($spacing-horizontal, mid-large);
+    /* padding: map-get($spacing-vertical, small) map-get($spacing-horizontal, mid-large); */
+    padding: 1px 1px;
 
     @include rtl {
       display: block !important;
@@ -206,9 +207,10 @@
     }
 
     .accomplishment-type-symbol {
-     /* @include size(rem(75)); */
+      /*  @include size(rem(75)); */
 
-      @include size(rem(30));
+      width:15.25rem;
+      height:3rem;
 
       border: none !important;
     }
@@ -265,9 +267,9 @@
       }
 
       .signatory-signature {
-       /* height: map-get($spacing-vertical, small); */
-        height: map-get($spacing-vertical,  x-large);
-        max-width: 100%;
+        /* height: map-get($spacing-vertical, small); */
+        height: 6rem;
+        max-width: 100% !important;
         margin-top: 0;
         padding-top: 0 !important;
         padding-bottom: 0 !important;

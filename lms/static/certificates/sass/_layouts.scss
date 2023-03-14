@@ -206,7 +206,7 @@
     @extend %layout;
 
     position: relative;
-    top: -(map-get($spacing-vertical, base));
+    //top: -(map-get($spacing-vertical, base));
 
     .accomplishment-course,
     .accomplishment-recipient,
@@ -239,7 +239,7 @@
       display: inline-block;
       vertical-align: middle;
       height: rem(100);
-      width: calc(70% - 1rem); /*50% - 1rem*/
+      width: calc(50% - 1rem); /*70% - 1rem*/
 
       &:last-child {
         @include margin-right(0);
@@ -265,9 +265,9 @@
     }
 
     .organization-logo {
-      max-width: 100%; /*80*/
+      max-width: 80%; /*100*/
       position: absolute;
-      top: 50%;
+      top: 10%; /* 50% */
 
       @include left(50%);
 
@@ -285,15 +285,22 @@
     }
 
     .signatory {
-      display: inline-block;
+      display: flex; /* inline-block */
       vertical-align: middle;
       width: calc(100% - 1rem);
-      max-width: 100%;
+
+      flex-direction: row; 
+      align-items: center;
+      align-content: center;
+
+
+      /*max-width: 100%;*/
 
       @include make-col(12);
 
       @include media-breakpoint-up(md) {
         @include make-col(4); 
+       /*@include make-col(2); */ 
       
       }
 
@@ -302,14 +309,15 @@
       }
 
       @include media-breakpoint-up(xl) {
-       /* @include make-col(3);*/
-       @include make-col(12);
+       /* @include make-col(3); */
+       @include make-col(12); /* 6 */
       }
 
       .signatory-signature {
+        /* display: inline-block; */
         display: block;
         max-width: 100%;
-        max-height: rem(200); /*100*/
+        max-height: rem(196);
         padding: map-get($spacing-vertical, small) map-get($spacing-horizontal, small);
       }
     }

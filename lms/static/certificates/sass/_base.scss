@@ -16,7 +16,8 @@ body {
   margin: 0;
   padding: 0;
   background: $white;
-  font-family: $font-family-sans;
+  /* font-family: $font-family-sans; */
+  font-family: $font-family-robbo-proxima; 
 }
 
 // ------------------------------
@@ -25,14 +26,14 @@ body {
 // Level one heading
 .hd-1 {
   margin-bottom: map-get($spacing-vertical, small);
-  font-size: rem(50); /*38*/
+  font-size: rem(38); /*50*/
   line-height: 1.4;
 }
 
 // Level two heading
 .hd-2 {
   margin-bottom: map-get($spacing-vertical, small);
-  font-size: rem(40);/*28*/
+  font-size: rem(28);/*40*/
   line-height: 1.4;
 }
 
