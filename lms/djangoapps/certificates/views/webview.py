@@ -136,7 +136,8 @@ def _update_certificate_context(context, course, user_certificate, platform_name
                                                         "awarded this {platform_name} " 
                                                         "Certificate of Completion in ").format(
         platform_name=platform_name,
-        certificate_type=context.get("certificate_type"))
+        certificate_type=context.get("certificate_type")
+    )
 
     certificate_type_description = get_certificate_description(user_certificate.mode, certificate_type, platform_name)
     if certificate_type_description:
