@@ -337,16 +337,24 @@
       box-sizing: border-box;
     }
 
-    .signatory-name,
+    //.signatory-name,
     .signatory-credentials {
       @include text-align(center);
     }
 
     .signatory-name {
-      margin-bottom: map-get($spacing-vertical, xx-small);
-      margin-top: 0;
-      font-weight: 400; /*800*/
-      display: inline-block;
+      
+      //display: block !important;
+      text-align: left !important;
+
+      .name-part{
+        margin-bottom: map-get($spacing-vertical, xx-small);
+        margin-top: 0;
+        font-weight: 400; /*800*/
+        text-align: left !important;
+        //display: block !important;
+
+      }
     }
 
     .signatory-credentials {
@@ -386,6 +394,14 @@
 
 
 // metadata
+.label-hashtag {
+  @extend %copy-meta;
+
+ // margin-bottom: map-get($spacing-vertical, xx-small);
+ // padding: 0 rem(8);
+  font-weight: 900 !important;
+  color: blue !important;
+}
 .accomplishment-metadata {
   margin-bottom: map-get($spacing-vertical, base);
 
@@ -396,6 +412,9 @@
       margin-bottom: map-get($spacing-vertical, xx-small);
       padding: 0 rem(8);
     }
+
+    
+    
 
     .label-explanation {
       display: block;

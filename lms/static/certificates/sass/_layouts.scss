@@ -224,7 +224,7 @@
     @include make-container();
 
     float: left;
-    width: 50%;
+    width: 100%; //50%
 
     .wrapper-orgs {
       @include text-align(center);
@@ -239,7 +239,7 @@
       display: inline-block;
       vertical-align: middle;
       height: rem(100);
-      width: calc(50% - 1rem); /*70% - 1rem*/
+      width: 15%; /*70% - 1rem*/
 
       &:last-child {
         @include margin-right(0);
@@ -260,16 +260,16 @@
 
     .organization {
       @include size(100%);
-
+      margin-left: 10%;
       position: relative;
     }
 
     .organization-logo {
-      max-width: 80%; /*100*/
+      max-width: 100%; /*100*/
       position: absolute;
       top: 10%; /* 50% */
 
-      @include left(50%);
+      //@include left(50%);
 
       transform: translate(-50%, -50%);
 
@@ -292,9 +292,10 @@
       flex-direction: row; 
       align-items: center;
       align-content: center;
+      justify-content: space-around;
 
 
-      /*max-width: 100%;*/
+      max-width: 100%;
 
       @include make-col(12);
 
