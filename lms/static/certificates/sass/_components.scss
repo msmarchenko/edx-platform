@@ -266,7 +266,7 @@
   .accomplishment-type-label {
     @include make-col(10);
 
-    margin: 0 auto;
+    //margin: 0 auto;
      /* font-weight: 600; */
   }
 
@@ -285,6 +285,14 @@
     @include text-align(center);
   }
 
+  .accomplishment-statement-alignment {
+    /*  @extend %rendering-section; */
+     width: 50%;
+     max-width: 50%;
+ 
+     @include text-align(center);
+  }
+
   .accomplishment-statement-lead {
     @extend .hd-2;
   }
@@ -295,9 +303,9 @@
 
   .accomplishment-summary {
     @extend %rendering-accomplishment-line;
-    @extend %copy-lead;
+    @extend %copy-lead-middle;
 
-    margin-bottom: map-get($spacing-vertical, mid-small);
+    //margin-bottom: map-get($spacing-vertical, mid-small);
   }
 
   .accomplishment-course {
@@ -312,7 +320,7 @@
 
   .accomplishment-statement-detail {
     @extend %rendering-accomplishment-line;
-    @extend %copy-lead;
+    @extend %copy-lead-middle;
   }
 
   // organizations
@@ -327,6 +335,7 @@
   // signatories
   .accomplishment-signatories {
     @extend %rendering-section;
+    padding-bottom: 0 !important;
 
     /*float:right;*/
 
@@ -343,7 +352,7 @@
     }
 
     .signatory-name {
-      
+
       //display: block !important;
       text-align: left !important;
 
@@ -355,6 +364,8 @@
         //display: block !important;
 
       }
+
+    
     }
 
     .signatory-credentials {
@@ -379,6 +390,15 @@
   }
 }
 
+.label-hashtag {
+  @extend %copy-meta;
+
+ // margin-bottom: map-get($spacing-vertical, xx-small);
+ // padding: 0 rem(8);
+  font-weight: 900 !important;
+  color: rgb(13, 115, 186) !important;
+}
+
 /*.accomplishment-rendering:after {
   content : "";
   display: block;
@@ -400,8 +420,9 @@
  // margin-bottom: map-get($spacing-vertical, xx-small);
  // padding: 0 rem(8);
   font-weight: 900 !important;
-  color: blue !important;
+  color: rgb(13, 115, 186) !important;
 }
+
 .accomplishment-metadata {
   margin-bottom: map-get($spacing-vertical, base);
 

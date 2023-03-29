@@ -189,7 +189,7 @@
   .wrapper-introduction {
     @extend %layout-wrapper;
 
-    margin-bottom: map-get($spacing-vertical, large);
+    margin-bottom: 0;  //map-get($spacing-vertical, large);
 
     .introduction {
       @extend %layout;
@@ -199,7 +199,7 @@
   .wrapper-accomplishment-rendering {
     @extend %layout-wrapper;
 
-    margin-bottom: map-get($spacing-vertical, small);
+    margin-bottom: 0; //map-get($spacing-vertical, small);
   }
 
   .accomplishment-rendering {
@@ -217,20 +217,41 @@
     .accomplishment-summary,
     .accomplishment-statement-detail {
       @include make-col(12);
+      max-width: 91%;
     }
+
+    .wrapper-statement-and-signatories-top {
+
+      width:100%;
+
+      .accomplishment-statement-left {
+        margin:0 16.2% 0 16.2%!important;
+        margin-bottom: 20px !important;
+        text-align: center;
+
+      }
+    }
+
   }
 
   .accomplishment-orgs {
-    @include make-container();
+    //@include make-container();
 
-    float: left;
-    width: 100%; //50%
+    //float: left;
+    //width: 100%; //50%
 
     .wrapper-orgs {
-      @include text-align(center);
+      //@include text-align(center);
+      display: flex; /* inline-block */
+      vertical-align: middle;
+      flex-direction: row;
+      justify-content: space-around;
 
-      margin: 0;
-      padding: 0;
+      //width: 100%; //50%
+      margin-bottom: -4.5rem;
+
+      //margin: 0;
+      //padding: 0;
     }
 
     .wrapper-organization {
@@ -239,11 +260,12 @@
       display: inline-block;
       vertical-align: middle;
       height: rem(100);
-      width: 15%; /*70% - 1rem*/
+      width: 100%; /*70% - 1rem*/
+      max-width: 34% !important;
 
-      &:last-child {
+      /*&:last-child {
         @include margin-right(0);
-      }
+      }*/
 
       @include media-breakpoint-up(md) {
         @include make-col(12); /*3*/
@@ -256,17 +278,32 @@
       @include media-breakpoint-up(xl) {
         @include make-col(12); /*2*/
       }
+
+      .print-left{
+        padding-left: 82px !important;
+      }
     }
+
+    
 
     .organization {
       @include size(100%);
-      margin-left: 10%;
+      margin-left: 6%;
       position: relative;
     }
 
+    .organization-right {
+      @include size(100%);
+      position: relative;
+      padding-right: 60px !important;
+      .print-right{
+        padding-right: 60px !important;
+      }
+    }
+
     .organization-logo {
-      max-width: 100%; /*100*/
-      position: absolute;
+      max-width: 50% !important; /*100*/
+      position: relative;
       top: 10%; /* 50% */
 
       //@include left(50%);
@@ -277,6 +314,13 @@
         transform: translate(50%, -50%);
       }
     }
+  }
+
+  .signatory-simple{
+    display: flex; /* inline-block */
+    vertical-align: middle;
+    flex-direction: row;
+    align-items: center;
   }
 
   .accomplishment-signatories {

@@ -16,24 +16,38 @@ course_mode_class = course_mode if course_mode else ''
 
             <div class="accomplishment-type">
 
-                <span style = "margin-bottom: 10%" class="accomplishment-type-symbol">
+                <span style = "margin-top: 35px; margin-bottom: 8.5%" class="accomplishment-type-symbol">
                   <!--  <img class="src" src="/static/certificates/images/ico-${course_mode_class}.png" alt="Image for course mode of type ${course_mode_class}"> -->
-                  <img class="src" src="/static/certificates/images/image.png" alt="Image for course mode of type ${course_mode_class}">
+                  <img style="width: 104% !important; max-width: 104% !important;" class="src" src="/static/certificates/images/Robbo-scratch-olympiad.png" alt="Image for course mode of type ${course_mode_class}">
                 </span>
 
-                <span style = "white-space: pre" class="accomplishment-type-label hd-3"> С Е Р Т И Ф И К А Т   Э К С П Е Р Т А</span>
             </div>
 
-            <div class="wrapper-statement-and-signatories">
-                <div class="accomplishment-statement">
-                    <p class="accomplishment-statement-lead">
-                        <span class="accomplishment-summary copy copy-lead"> Выдан:</span>
-                        <strong class="accomplishment-recipient hd-1 emphasized">${accomplishment_copy_name}</strong>                    
+            <div class="wrapper-statement-and-signatories-top">
+                <div style=" margin-left:13.3% !important; margin-right: 13.3% !important;" class="accomplishment-statement-left">
+
+                    <p style = "white-space: pre; max-width: 100% !important;" class="accomplishment-type-label hd-3-s"> С Е Р Т И Ф И К А Т   О   П Р О Х О Ж Д Е Н И И    К У Р С А</p>
+
+                    <p class="accomplishment-statement-lead"> <!--accomplishment-statement-lead-->
+                        <p style = "text-align: left; line-height: 1.0 !important;" class="accomplishment-summary copy copy-lead-middle"> Выдан в подтверждение того, что</p>
+
+                        <strong class="accomplishment-recipient emphasized hd-1-emphasized ">${accomplishment_copy_name}</strong>  <!--${accomplishment_copy_name}-->
                     </p>
-                    <p style = "width: 60%" class="accomplishment-statement-detail copy copy-lead">за участие в финальном этапе Международной Scratch-Олимпиады
-                        по креативному программированию 2023 в лице профессионального
-                        жюри финального этапа.</p>
+                    <p style="border-bottom: 2px dotted gray; margin-bottom: 30px !important;" class="accomplishment-summary copy copy-lead">&nbsp;</p>
+
+                    <p style="line-height: 0 !important; margin-bottom: 25px !important;" class="accomplishment-statement-detail copy copy-lead-middle">успешно прошел (-ла) курс подготовки экспертов Scratch-Олимпиады 2023</p>
+                    % if certificate_data:
+                        % for signatory in certificate_data.get('signatories', []):
+                            % if signatory.get('signature_image_path'):
+                                <span class="accomplishment-statement-detail copy copy-lead-middle">${signatory['title']}</span>
+                            % endif
+                        % endfor
+                    % endif
                 </div>
+            </div>
+
+
+            <div class="wrapper-statement-and-signatories">
                 % if mode != 'base':
                 <div class="accomplishment-signatories">
                     <h3 class="accomplishment-signatories-title sr-only">${_("Noted by")}</h3>
@@ -42,39 +56,42 @@ course_mode_class = course_mode if course_mode else ''
                             % if certificate_data:
                                 % for signatory in certificate_data.get('signatories', []):
                                     % if signatory.get('signature_image_path'):
-                                        <div class="signatory">
-                                            <!--<div style = "width: 33.333%" class="metadata accomplishment-id">
-                                                <p class="label-hashtag">#ScratchOlympiad 2023:</p>
-                                            </div>
+                                    <div style="margin-bottom: -15px !important;" class="signatory">
 
-                                            <div style = "width: 33.333%" class="metadata accomplishment-id">
-                                               !!!!!!!!!!!!!!!!! <img class="signatory-signature" src="${static.url(signatory['signature_image_path'])}" alt="${signatory['name']}"> 
-                                                <img class="signatory-signature" src="/static/certificates/images/robbo_sig.png" alt="${signatory['name']}"> 
-                                            </div>
+                                        <!--<div style = "width: 33.333%" class="metadata accomplishment-id">
+                                          <p class="label-hashtag">#ScratchOlympiad 2023:</p>
+                                        </div>
+                                        <div style = "width: 33.333%" class="metadata accomplishment-id">
+                                           !!!!!!!!!!!!!!!!! <img class="signatory-signature" src="${static.url(signatory['signature_image_path'])}" alt="${signatory['name']}"> 
+                                            <img class="signatory-signature" src="/static/certificates/images/robbo_sig.png" alt="${signatory['name']}"> 
+                                        </div>  <div style = "width: 33.333%" class="metadata accomplishment-id">
+                                            <h4 class="signatory-name hd-5">${signatory['name']}</h4>
+                                            <p class="signatory-credentials copy copy-micro">
+                                              <span class="role">${signatory['title']}</span>
+                                              <span class="organization">${signatory['organization']}</span>
+                                            </p>
+                                        </div>-->
 
-                                            <div style = "width: 33.333%" class="metadata accomplishment-id">
-                                                <h4 class="signatory-name hd-5">${signatory['name']}</h4>
-                                                <p class="signatory-credentials copy copy-micro">
-                                                  <span class="role">${signatory['title']}</span>
-                                                  <span class="organization">${signatory['organization']}</span>
-                                                </p>
-                                            </div>-->
-                                            
-                                            <h4 class="signatory-name hd-5 label-hashtag">#ScratchOlympiad 2023</h4>
-                                            <img class="signatory-signature" src="/static/certificates/images/robbo_sig.png" alt="${signatory['name']}">
+                                        <h4 class="signatory-name hd-5-middle label-hashtag">#ScratchOlympiad</h4>
+                                        <div class="signatory-simple">
+
+                                          <!--  <img style="margin-left: 250px!important;" class="signatory-signature" src="/static/certificates/images/robbo_sig.png" alt="${signatory['name']}"> -->
+                                            <img style="margin-left: 250px!important;" class="signatory-signature" src="${static.url(signatory['signature_image_path'])}" alt="${signatory['name']}">
                                             <!--<h4 class="signatory-name hd-5">${signatory['name']}</h4>-->
                                             <div class = "signatory-name"> 
-                                                <h4 class="signatory-name hd-5 name-part">Председатель</h4>
-                                                <h4 class="signatory-name hd-5 name-part">Организационного комитета</h4>
-                                                <h4 class="signatory-name hd-5 name-part">Павел Фролов</h4>
-                                            </div>
-                                            <!--<p class="signatory-credentials copy copy-micro">
-                                                <span class="role">${signatory['title']}</span>
-                                                <span class="organization">${signatory['organization']}</span>
-                                            </p>    -->                               
-                                   
+                                               <h4 class="signatory-name hd-5-middle name-part">Председатель</h4>
+                                               <h4 class="signatory-name hd-5-middle name-part">Организационного комитета</h4>
+                                               <h4 class="signatory-name hd-5-middle-name name-part">Павел Фролов</h4>
+                                             </div>
 
                                         </div>
+
+                                    <!--<p class="signatory-credentials copy copy-micro">
+                                        <span class="role">${signatory['title']}</span>
+                                        <span class="organization">${signatory['organization']}</span> </p> -->                               
+                                   
+
+                                    </div>
                                     % endif
                                 % endfor
                             % endif
@@ -83,16 +100,16 @@ course_mode_class = course_mode if course_mode else ''
                 </div>
                 % endif
             </div>
-            <div class="accomplishment-orgs">
+            <div style=" margin-bottom: 0rem !important; margin-top: 0.9rem !important;" class="accomplishment-orgs">
                 <h3 class="accomplishment-orgs-title sr-only">${_("Supported by the following organizations")}</h3>
-                <ul class="wrapper-orgs list-orgs">
-                    <li class="wrapper-organization">
+                <ul style="justify-content: space-between;" class="wrapper-orgs list-orgs">
+                   <!-- <li class="wrapper-organization">
                         <div class="organization organization-edX">
                             <img class="organization-logo" src="/static/certificates/images/robbo_logo.svg" alt="${platform_name}">
                         </div>
                     </li>
 
-                   <!-- <li class="wrapper-organization">
+                    <li class="wrapper-organization">
                         <div class="organization organization-edX">
                             <img class="organization-logo" src="${logo_src}" alt="${platform_name}">
                         </div>
@@ -106,40 +123,24 @@ course_mode_class = course_mode if course_mode else ''
                     </li>
                     % endif
 
-                    <li class="wrapper-organization">
-                        <div class="organization organization-edX">
-                            <img class="organization-logo" src="/static/certificates/images/robbo_logo.svg" alt="${platform_name}">
+                    <li class="wrapper-organization print-left">
+                        <div style="" class="organization print-left">
+                           <img class="organization-logo" src="/static/certificates/images/Robbo-Logo-Eng.png" alt="${platform_name}">
                         </div>
-                    </li>
+                    </li> 
 
-                    <li class="wrapper-organization">
+                    <li class="wrapper-organization"></li>
                         <div class="organization organization-edX">
-                            <img class="organization-logo" src="/static/certificates/images/robbo_logo.svg" alt="${platform_name}">
-                        </div>
-                    </li>
 
-                    <li class="wrapper-organization">
-                        <div class="organization organization-edX">
-                            <img class="organization-logo" src="/static/certificates/images/robbo_logo.svg" alt="${platform_name}">
                         </div>
-                    </li>
+                    </li> 
 
-                    <li class="wrapper-organization">
-                        <div class="organization organization-edX">
-                            <img class="organization-logo" src="/static/certificates/images/robbo_logo.svg" alt="${platform_name}">
-                        </div>
+                    <li class="wrapper-organization"> 
+                        <div class="organization-right print-right">
+                             <span>${certificate_date_issued_title}</span>
+                             <span>${certificate_date_issued}</span>   
+                        </div>     
                     </li>
-
-                    <li class="wrapper-organization">
-                        <div class="organization organization-edX">
-                            <img class="organization-logo" src="/static/certificates/images/robbo_logo.svg" alt="${platform_name}">
-                        </div>
-                    </li>
-
-                    <!-- <li class="wrapper-organization">
-                        <span>${certificate_date_issued_title}</span>
-                        <span>${certificate_date_issued}</span>
-                    </li> -->
 
                 </ul>
             </div>
