@@ -39,7 +39,7 @@ course_mode_class = course_mode if course_mode else ''
                     % if certificate_data:
                         % for signatory in certificate_data.get('signatories', []):
                             % if signatory.get('signature_image_path'):
-                                <span class="accomplishment-statement-detail copy copy-lead-middle">${signatory['title']}</span>
+                                <span class="accomplishment-statement-detail copy copy-lead-middle"> <strong>"Дисциплина: ${signatory['title']}"</strong></span>
                             % endif
                         % endfor
                     % endif
