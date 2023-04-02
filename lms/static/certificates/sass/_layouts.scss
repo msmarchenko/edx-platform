@@ -321,6 +321,8 @@
     vertical-align: middle;
     flex-direction: row;
     align-items: center;
+    justify-content: flex-end;
+    margin-right: 50px !important;
   }
 
   .accomplishment-signatories {
@@ -331,32 +333,13 @@
     .signatory {
       display: flex; /* inline-block */
       vertical-align: middle;
-      width: calc(100% - 1rem);
-
+      width: 100%;
+      justify-content: space-between !important;
       flex-direction: row; 
       align-items: center;
-      align-content: center;
-      justify-content: space-around;
 
 
       max-width: 100%;
-
-      @include make-col(12);
-
-      @include media-breakpoint-up(md) {
-        @include make-col(4); 
-       /*@include make-col(2); */ 
-      
-      }
-
-      @include media-breakpoint-up(lg) {
-        @include make-col(3);
-      }
-
-      @include media-breakpoint-up(xl) {
-       /* @include make-col(3); */
-       @include make-col(12); /* 6 */
-      }
 
       .signatory-signature {
         /* display: inline-block; */

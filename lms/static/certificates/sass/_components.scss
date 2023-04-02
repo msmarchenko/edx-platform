@@ -344,6 +344,7 @@
       margin: 0 15px map-get($spacing-vertical, x-small) 140px; 
       /* 0 auto map-get($spacing-vertical, x-small) auto */
       box-sizing: border-box;
+      margin-left: 40px !important;
     }
 
     //.signatory-name,
@@ -362,6 +363,7 @@
         font-weight: 400; /*800*/
         text-align: left !important;
         //display: block !important;
+        margin-left: 0px !important;
 
       }
 
@@ -397,6 +399,7 @@
  // padding: 0 rem(8);
   font-weight: 900 !important;
   color: rgb(13, 115, 186) !important;
+  margin-left: 50px !important;
 }
 
 /*.accomplishment-rendering:after {

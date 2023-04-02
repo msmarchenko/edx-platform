@@ -24,7 +24,7 @@ course_mode_class = course_mode if course_mode else ''
             </div>
 
             <div class="wrapper-statement-and-signatories-top">
-                <div style=" margin-left:13.3% !important; margin-right: 13.3% !important;" class="accomplishment-statement-left">
+                <div style="margin-bottom: 55px !important; margin-left:13.3% !important; margin-right: 13.3% !important;" class="accomplishment-statement-left">
 
                     <p style = "white-space: pre; max-width: 100% !important;" class="accomplishment-type-label hd-3-s"> С Е Р Т И Ф И К А Т   О   П Р О Х О Ж Д Е Н И И    К У Р С А</p>
 
@@ -56,7 +56,7 @@ course_mode_class = course_mode if course_mode else ''
                             % if certificate_data:
                                 % for signatory in certificate_data.get('signatories', []):
                                     % if signatory.get('signature_image_path'):
-                                    <div style="margin-bottom: -15px !important;" class="signatory">
+                                    <div style=" margin-bottom: 10px !important; justify-content: space-between !important;" class="signatory">
 
                                         <!--<div style = "width: 33.333%" class="metadata accomplishment-id">
                                           <p class="label-hashtag">#ScratchOlympiad 2023:</p>
@@ -72,13 +72,17 @@ course_mode_class = course_mode if course_mode else ''
                                             </p>
                                         </div>-->
 
-                                        <h4 class="signatory-name hd-5-middle label-hashtag">#ScratchOlympiad</h4>
-                                        <div class="signatory-simple">
+                                        <div class = "signatory-name"> 
+                                            <h4 class="signatory-name hd-5-middle label-hashtag">#ScratchOlympiad</h4>
+                                            <h4 style="text-decoration: underline;" class="signatory-name hd-5-middle label-hashtag">creativeprogramming.org</h4>
+                                        </div>
 
-                                          <!--  <img style="margin-left: 250px!important;" class="signatory-signature" src="/static/certificates/images/robbo_sig.png" alt="${signatory['name']}"> -->
-                                            <img style="margin-left: 250px!important;" class="signatory-signature" src="${static.url(signatory['signature_image_path'])}" alt="${signatory['name']}">
+                                        <div  class="signatory-simple">                                       
+
+                                           <!-- <img style="width: 25% !important;max-width: 25% !important;" class="signatory-signature" src="/static/certificates/images/podpis_Frolov.png" alt="${signatory['name']}"> -->
+                                           <img style="width: 25% !important;max-width: 25% !important;" class="signatory-signature" src="${static.url(signatory['signature_image_path'])}" alt="${signatory['name']}">
                                             <!--<h4 class="signatory-name hd-5">${signatory['name']}</h4>-->
-                                            <div class = "signatory-name"> 
+                                            <div  class = "signatory-name"> 
                                                <h4 class="signatory-name hd-5-middle name-part">Председатель</h4>
                                                <h4 class="signatory-name hd-5-middle name-part">Организационного комитета</h4>
                                                <h4 class="signatory-name hd-5-middle-name name-part">Павел Фролов</h4>
@@ -100,7 +104,7 @@ course_mode_class = course_mode if course_mode else ''
                 </div>
                 % endif
             </div>
-            <div style=" margin-bottom: 0rem !important; margin-top: 0.9rem !important;" class="accomplishment-orgs">
+            <div style=" margin-bottom: 0rem !important; margin-top: 0rem !important;" class="accomplishment-orgs">
                 <h3 class="accomplishment-orgs-title sr-only">${_("Supported by the following organizations")}</h3>
                 <ul style="justify-content: space-between;" class="wrapper-orgs list-orgs">
                    <!-- <li class="wrapper-organization">
@@ -115,6 +119,12 @@ course_mode_class = course_mode if course_mode else ''
                         </div>
                     </li> -->
 
+                   <!-- <li class="wrapper-organization">
+                        <div class="organization">
+                           <a href="http://creativeprogramming.org"> creativeprogramming.org  </a>
+                        </div>
+                    </li>  -->
+
                     % if organization_logo:
                   <li class="wrapper-organization">
                         <div class="organization">
@@ -125,7 +135,7 @@ course_mode_class = course_mode if course_mode else ''
 
                     <li class="wrapper-organization print-left">
                         <div  class="organization print-left">
-                           <img class="organization-logo" src="/static/certificates/images/Robbo-Logo-Eng.png" alt="${platform_name}">
+                           <img style="margin-left: 0px !important;" class="organization-logo" src="/static/certificates/images/Robbo-Logo-Eng.png" alt="${platform_name}">
                         </div>
                     </li> 
 
@@ -136,7 +146,7 @@ course_mode_class = course_mode if course_mode else ''
                     </li> 
 
                     <li class="wrapper-organization"> 
-                        <div class="organization-right print-right">
+                        <div  class="organization-right print-right">
                              <span>${certificate_date_issued_title}</span>
                              <span>${certificate_date_issued}</span>   
                         </div>     

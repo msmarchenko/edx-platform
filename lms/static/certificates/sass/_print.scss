@@ -216,6 +216,15 @@
     line-height: 1.5;
   }
 
+  .label-hashtag {
+  
+   // margin-bottom: map-get($spacing-vertical, xx-small);
+   // padding: 0 rem(8);
+    font-weight: 900 !important;
+    color: rgb(13, 115, 186) !important;
+    margin-left: -90px !important;
+  }
+
   // accomplishment
   .accomplishment-main {
     @extend %print-no-background;
@@ -287,6 +296,7 @@
         max-width: 80% !important; /*100*/
         position: relative;
         top: 10%; /* 50% */
+        margin-left: -40px !important;
 
         //@include left(50%);
 
@@ -322,16 +332,18 @@
           .organization-right{
 
             .print-right{
-              padding-right: 0px !important;
+
+              
             }
           }
 
           .organization{
             @include size(100%);
 
-            margin-left: -8px !important;
+            margin-left: -40px !important;
             position: relative;
             .print-left{
+              margin-left: -40px !important;
               //padding-left: 0px !important;
             }
           }
@@ -350,6 +362,16 @@
         }
       }
     }
+
+    .signatory-simple{
+      display: flex; /* inline-block */
+      vertical-align: middle;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: 50px !important;
+    }
+
     .accomplishment-signatories {
       @extend %print-rendering-section;
       display: flex; /* inline-block */
@@ -380,19 +402,21 @@
         display: flex; /* inline-block */
         vertical-align: middle;
         //width: calc(100% - 1rem);
-        width: 100%;
+        width: 120% !important;
+        max-width: 120% !important;
         flex-direction: row; 
         align-items: center;
         align-content: center;
-        justify-content: space-around;
-        max-width: 100%;
+        justify-content: space-between;
+        max-width: 200%;
 
         .signatory-signature {
           /* height: map-get($spacing-vertical, small);*/
           display: block;
-          width: 25% !important;
-          max-width: 25% !important;
+          width: 40% !important;
+          max-width: 40% !important;
           margin-top: 0;
+          margin-left: 0 !important;
           padding-top: 0 !important;
           padding-bottom: 0 !important;
         }
