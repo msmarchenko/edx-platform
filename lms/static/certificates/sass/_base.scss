@@ -30,6 +30,14 @@ body {
   line-height: 1.4;
 }
 
+.hd-1-emphasized {
+  margin-bottom: -62px !important;
+  margin-top: -7% !important;
+  font-size: rem(38);
+  line-height: 1.4;
+}
+
+
 // Level two heading
 .hd-2 {
   margin-bottom: map-get($spacing-vertical, small);
@@ -42,6 +50,13 @@ body {
   margin-bottom: map-get($spacing-vertical, x-small);
   font-size: rem(24);
   line-height: 1.5;
+}
+
+.hd-3-s {
+  margin-bottom: map-get($spacing-vertical, x-small);
+  font-size: 26.5px;
+  font-weight: 300 !important;
+  line-height: 2;
 }
 
 // Level four heading
@@ -57,6 +72,22 @@ body {
   font-size: rem(18);
   line-height: 1.6;
 }
+
+.hd-5-middle {
+  margin-bottom: map-get($spacing-vertical, x-small);
+  font-size: rem(21) !important;
+  font-weight: 300 !important;
+  line-height: 1.0;
+}
+
+.hd-5-middle-name {
+  margin-bottom: map-get($spacing-vertical, x-small);
+  font-size: rem(21) !important;
+  font-weight: 600 !important;
+  line-height: 1.0;
+}
+
+
 
 // Level six heading
 .hd-6 {

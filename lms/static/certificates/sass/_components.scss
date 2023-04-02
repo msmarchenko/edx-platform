@@ -220,7 +220,7 @@
   @extend %depth-card;
 
   position: relative;
-  top: -(map-get($spacing-vertical, base));
+  //top: -(map-get($spacing-vertical, base));
  /* border-top: rem(4) solid $cert-base-color; */
 
   // type
@@ -240,7 +240,7 @@
   .accomplishment-type-label {
     @include make-col(10);
 
-    margin: 0 auto;
+    //margin: 0 auto;
    /* font-weight: 600; */
   }
 
@@ -257,7 +257,17 @@
    /*  @extend %rendering-section; */
 
     @include text-align(center);
-  }
+    }
+
+  .accomplishment-statement-alignment {
+   /*  @extend %rendering-section; */
+    width: 50%;
+    max-width: 50%;
+
+    @include text-align(center);
+    }
+
+
 
   .accomplishment-statement-lead {
     @extend .hd-2;
@@ -269,9 +279,9 @@
 
   .accomplishment-summary {
     @extend %rendering-accomplishment-line;
-    @extend %copy-lead;
+    @extend %copy-lead-middle;
 
-    margin-bottom: map-get($spacing-vertical, mid-small);
+    //margin-bottom: map-get($spacing-vertical, mid-small);
   }
 
   .accomplishment-course {
@@ -286,7 +296,7 @@
 
   .accomplishment-statement-detail {
     @extend %rendering-accomplishment-line;
-    @extend %copy-lead;
+    @extend %copy-lead-middle;
   }
 
   // organizations
@@ -301,6 +311,7 @@
   // signatories
   .accomplishment-signatories {
     @extend %rendering-section;
+    padding-bottom: 0 !important;
 
     .signatory-signature {
       display: block;
@@ -308,16 +319,23 @@
       box-sizing: border-box;
     }
 
-    .signatory-name,
+    //.signatory-name,
     .signatory-credentials {
       @include text-align(center);
     }
 
     .signatory-name {
-      margin-bottom: map-get($spacing-vertical, xx-small);
-      margin-top: 0;
-      font-weight: 400;
-      display: inline-block;
+      //display: block !important;
+      text-align: left !important;
+
+      .name-part{
+        margin-bottom: map-get($spacing-vertical, xx-small);
+        margin-top: 0;
+        font-weight: 400; /*800*/
+        text-align: left !important;
+        //display: block !important;
+
+      }
     }
 
     .signatory-credentials {
@@ -337,6 +355,15 @@
   .accomplishment-signatories-title {
     @extend %rendering-hd-section;
   }
+}
+
+.label-hashtag {
+  @extend %copy-meta;
+
+ // margin-bottom: map-get($spacing-vertical, xx-small);
+ // padding: 0 rem(8);
+  font-weight: 900 !important;
+  color: rgb(13, 115, 186) !important;
 }
 
 // metadata
