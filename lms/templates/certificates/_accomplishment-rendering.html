@@ -28,20 +28,20 @@ course_mode_class = course_mode if course_mode else ''
             <div class="wrapper-statement-and-signatories-top">
                 <div style="margin-left: 16.2% !important; margin-right: 16.2% !important; margin-bottom: 100px;" class="accomplishment-statement-left">
 
-                    <p style = "white-space: pre; width: 100%; max-width: 100%;" class="accomplishment-type-label hd-3-s"> C E R T I F I C A T E  O F  C O M P L E T I O N</p> <!--С Е Р Т И Ф И К А Т   О   П Р О Х О Ж Д Е Н И И    К У Р С А-->
+                    <p style = "white-space: pre; width: 100%; max-width: 100%;" class="accomplishment-type-label hd-3-s"> C E R T I F I C A T E  O F  C O M P L E T I O N</p> 
 
                     <p class="accomplishment-statement-lead"> <!--accomplishment-statement-lead-->
-                        <p style = "margin-bottom: 10px !important; text-align: left; line-height: 1.0 !important;" class="accomplishment-summary copy copy-lead-middle">This is to certify that </p> <!--Выдан в подтверждение того, что-->
+                        <p style = "margin-bottom: 10px !important; text-align: left; line-height: 1.0 !important;" class="accomplishment-summary copy copy-lead-middle">This is to certify that </p> 
                         
                         <strong class="accomplishment-recipient emphasized hd-1-emphasized ">${accomplishment_copy_name}</strong>  <!--${accomplishment_copy_name}-->
                     </p>
                     <p style="margin-left: 28% !important; max-width: 69% !important; border-bottom: 2px dotted gray; margin-bottom: 30px !important;" class="accomplishment-summary copy copy-lead">&nbsp;</p>
 
-                    <p style="line-height: 0 !important; margin-bottom: 25px !important;" class="accomplishment-statement-detail copy copy-lead-middle">has succesfully Scratch Olympiad 2023 expert training course</p> <!--успешно прошел (-ла) курс подготовки экспертов Scratch-Олимпиады 2023-->
+                    <p style="line-height: 0 !important; margin-bottom: 25px !important;" class="accomplishment-statement-detail copy copy-lead-middle">has succesfully Scratch Olympiad 2023 expert training course</p> 
                     % if certificate_data:
                         % for signatory in certificate_data.get('signatories', []):
                             % if signatory.get('signature_image_path'):
-                                <span class="accomplishment-statement-detail copy copy-lead-middle">${signatory['title']}</span>
+                                <span class="accomplishment-statement-detail copy copy-lead-middle"> <strong> "Discipline: ${signatory['title']}"  </strong>   </span>
                             % endif
                         % endfor
                     % endif
