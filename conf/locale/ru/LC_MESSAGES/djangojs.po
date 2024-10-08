@@ -5065,7 +5065,7 @@ msgstr ""
 
 #: lms/static/js/student_account/tos_modal.js
 msgid "Terms of Service and Honor Code"
-msgstr "Условия предоставления услуг и Кодекс чести"
+msgstr "Условия предоставления услуг"
 
 #: lms/static/js/student_account/views/FinishAuthView.js
 msgid "Saving your email preference"

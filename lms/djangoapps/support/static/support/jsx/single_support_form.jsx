@@ -224,7 +224,6 @@ class RenderForm extends React.Component {
             <p> <a href="https://support.robbo.ru"> https://support.robbo.ru</a> - портал поддержки РОББО </p>
             <p> <a href="https://wiki.robbo.ru/"> https://wiki.robbo.ru/ </a> - wiki РОББО </p>
             <p> <a href="https://robbo.ru/olymp/"> https://robbo.ru/olymp/ </a> -  российский национальный отборочный этап международной Scratch-Олимпиады по креативному программированию </p>
-            <p> <a href="https://discord.gg/xzjz6t2bHM"> https://discord.gg/xzjz6t2bHM </a> -  РОББО в Discord </p>
             <p> Свяжитесь с нами: <a href="mailto:support@robbo.ru"> support@robbo.ru </a> </p>
           </div>
         </div>

@@ -5574,7 +5574,7 @@ msgstr "Вакансии"
 #: lms/djangoapps/branding/api.py lms/djangoapps/certificates/views/webview.py
 #: themes/edx.org/lms/templates/certificates/_accomplishment-footer.html
 msgid "Terms of Service & Honor Code"
-msgstr "Условия предоставления услуг и Кодекс чести"
+msgstr "Условия предоставления услуг"
 
 #. #-#-#-#-#  django-partial.po (edx-platform)  #-#-#-#-#
 #. Translators: A 'Privacy Policy' is a legal document/statement describing a
@@ -11777,7 +11777,7 @@ msgstr "Страна или регион, где вы живёте."
 #. in order to register a new account.
 #: openedx/core/djangoapps/user_api/api.py
 msgid "Terms of Service and Honor Code"
-msgstr "Условия предоставления услуг и Кодекс чести"
+msgstr "Условия предоставления услуг"
 
 #: openedx/core/djangoapps/user_api/api.py
 #, python-brace-format
@@ -21813,8 +21813,7 @@ msgid ""
 "{tos_link_start}Terms of Service{tos_link_end} and {honor_link_start}Honor "
 "Code{honor_link_end}"
 msgstr ""
-"{tos_link_start}Условия предоставления услуг{tos_link_end} и "
-"{honor_link_start}Кодекс чести{honor_link_end}"
+"{tos_link_start}Условия предоставления услуг{tos_link_end} "
 
 #: themes/stanford-style/lms/templates/footer.html
 #: themes/stanford-style/lms/templates/static_templates/tos.html
