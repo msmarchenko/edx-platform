@@ -108,13 +108,6 @@ def get_footer(is_secure=True, language=settings.LANGUAGE_CODE):
         "openedx_link": _footer_openedx_link(),
         "navigation_links": _footer_navigation_links(language),
         "legal_links": _footer_legal_links(language),
-        "edx_org_link": {
-            "url": "https://www.edx.org/?utm_medium=affiliate_partner"
-                   "&utm_source=opensource-partner"
-                   "&utm_content=open-edx-partner-footer-link"
-                   "&utm_campaign=open-edx-footer",
-            "text": _("Take free online courses at edX.org"),
-        },
     }
 
 
