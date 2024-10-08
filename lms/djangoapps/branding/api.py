@@ -299,10 +299,10 @@ def _footer_legal_links(language=settings.LANGUAGE_CODE):
     """Return the legal footer links (e.g. terms of service). """
 
     links = [
-        ("terms_of_service_and_honor_code", (marketing_link("TOS_AND_HONOR"), _("Terms of Service & Honor Code"))),
+       # ("terms_of_service_and_honor_code", (marketing_link("TOS_AND_HONOR"), _("Terms of Service & Honor Code"))),
         ("privacy_policy", (marketing_link("PRIVACY"), _("Privacy Policy"))),
-        ("accessibility_policy", (marketing_link("ACCESSIBILITY"), _("Accessibility Policy"))),
-        ("media_kit", (marketing_link("MEDIA_KIT"), _("Media Kit"))),
+       # ("accessibility_policy", (marketing_link("ACCESSIBILITY"), _("Accessibility Policy"))),
+       # ("media_kit", (marketing_link("MEDIA_KIT"), _("Media Kit"))),
     ]
 
     # Backwards compatibility: If a combined "terms of service and honor code"
@@ -311,7 +311,7 @@ def _footer_legal_links(language=settings.LANGUAGE_CODE):
     if not (tos_and_honor_link and tos_and_honor_link != "#"):
         links.extend([
             ("terms_of_service", (marketing_link("TOS"), _("Terms of Service"))),
-            ("honor_code", (marketing_link("HONOR"), _("Honor Code"))),
+            #("honor_code", (marketing_link("HONOR"), _("Honor Code"))),
         ])
 
     if language == settings.LANGUAGE_CODE:
@@ -372,9 +372,9 @@ def _footer_more_info_links(language=settings.LANGUAGE_CODE):
     """Return the More Information footer links (e.g. terms of service). """
 
     links = [
-        ("terms_of_service_and_honor_code", (marketing_link("TOS_AND_HONOR"), _("Terms of Service & Honor Code"))),
+       # ("terms_of_service_and_honor_code", (marketing_link("TOS_AND_HONOR"), _("Terms of Service & Honor Code"))),
         ("privacy_policy", (marketing_link("PRIVACY"), _("Privacy Policy"))),
-        ("accessibility_policy", (marketing_link("ACCESSIBILITY"), _("Accessibility Policy"))),
+       # ("accessibility_policy", (marketing_link("ACCESSIBILITY"), _("Accessibility Policy"))),
     ]
 
     # Backwards compatibility: If a combined "terms of service and honor code"
