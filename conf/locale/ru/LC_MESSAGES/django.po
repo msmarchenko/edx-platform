@@ -21333,6 +21333,9 @@ msgid ""
 "website. If you continue browsing this site, we understand that you accept "
 "the use of cookies."
 msgstr ""
+"Этот веб-сайт использует файлы cookie, чтобы обеспечить вам наилучший доступ к нашему веб-сайту." 
+"Если вы продолжаете просматривать этот сайт, мы считаем, что вы принимаете"
+"использование файлов cookie."
 
 #: lms/templates/widgets/cookie-consent.html
 msgid "Got it!"
