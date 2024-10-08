@@ -314,9 +314,9 @@ def _footer_legal_links(language=settings.LANGUAGE_CODE):
             #("honor_code", (marketing_link("HONOR"), _("Honor Code"))),
         ])
 
-    if language == settings.LANGUAGE_CODE:
-        position = _find_position_of_link(links, 'accessibility_policy')
-        links.insert(position, ("sitemap", (marketing_link("SITE_MAP"), _("Sitemap"))))
+    #if language == settings.LANGUAGE_CODE:
+    #    position = _find_position_of_link(links, 'accessibility_policy')
+    #    links.insert(position, ("sitemap", (marketing_link("SITE_MAP"), _("Sitemap"))))
 
     return [
         {
