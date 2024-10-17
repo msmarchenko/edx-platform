@@ -13,13 +13,35 @@ from openedx.core.djangolib.markup import HTML, Text
       <header>
         <div class="outer-wrapper">
           <div class="title">
-            <div class="heading-group">
-              % if homepage_overlay_html:
-                ${homepage_overlay_html | n, decode.utf8}
-              % else:
-                <%include file="index_overlay.html" />
-              % endif
+
+            <div class="grid-container">
+              <div class="grid-item">
+                <div class="heading-group">
+
+                  <%include file="student_account/login_and_register.html" /> 
+    
+                </div>
+
+              </div>
+              <div class="grid-item">
+
+                <div style="background-image: url(/static/images/main_back.png);">
+
+               
+                    % if homepage_overlay_html:
+                    ${homepage_overlay_html | n, decode.utf8}
+                  % else:
+                    <%include file="index_overlay.html" />
+                  % endif
+
+              </div>
+
+              </div>
+            
             </div>
+  
+           
+
             % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
               <div class="course-search">
                 <form method="get" action="/courses">
@@ -35,11 +57,12 @@ from openedx.core.djangolib.markup import HTML, Text
 
           </div>
 
+          
           <%include file="index_promo_video.html" />
         </div>
 
       </header>
-      <%include file="${courses_list}" />
+    
 
     </section>
 </main>

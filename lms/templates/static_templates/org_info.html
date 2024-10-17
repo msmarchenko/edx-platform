@@ -1,0 +1,92 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+
+<%inherit file="../main.html" />
+
+<%namespace name='static' file='../static_content.html'/>
+
+
+<%block name="pagetitle">${_("Сведения об организации")}</%block>
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="container about">
+        <h1>
+            <%block name="pageheader">${_("Сведения об организации")}</%block>
+        </h1>
+        <p>
+            <%block name="pagecontent">
+            <div>
+                <button class="accordion-info"> Основные сведения</button>
+                <div class="panel-org-info">
+                  <p>Content for section 1...</p>
+                </div>
+              
+                <button class="accordion-info">Структура и органы образовательной организации</button>
+                <div class="panel-org-info">
+                  <p>Content for section 2...</p>
+                </div>
+              
+                <button class="accordion-info">Образование</button>
+                <div class="panel-org-info">
+                  <p>Content for section 3...</p>
+                </div>
+
+                <button class="accordion-info">Материально-техническое обеспечение</button>
+                <div class="panel-org-info">
+                  <p>Content for section 3...</p>
+                </div>
+
+                <button class="accordion-info">Вакантные места </button>
+                <div class="panel-org-info">
+                  <p>Content for section 3...</p>
+                </div>
+
+
+                <button class="accordion-info">Доступная среда </button>
+                <div class="panel-org-info">
+                  <p>Content for section 3...</p>
+                </div>
+
+
+                <button class="accordion-info">Платные образовательные услуги</button>
+                <div class="panel-org-info">
+                  <p>Content for section 3...</p>
+                </div>
+
+                <button class="accordion-info">Финансово-хозяйственная деятельность</button>
+                <div class="panel-org-info">
+                  <p>Content for section 3...</p>
+                </div>
+                
+
+              </div>
+
+             
+
+
+
+
+
+              <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                  var acc = document.getElementsByClassName("accordion-info");
+                  for (var i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function() {
+                      this.classList.toggle("active");
+                      var panel = this.nextElementSibling;
+                      if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                      } else {
+                        panel.style.display = "block";
+                      }
+                    });
+                  }
+                });
+              </script>
+                
+            </%block>
+        </p>
+    </section>
+</main>
+
+
+

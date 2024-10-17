@@ -25,6 +25,8 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
 from common.djangoapps.util.cache import cache_if_anonymous
 from common.djangoapps.util.json_request import JsonResponse
 
+from openedx.core.djangoapps.user_authn import views as auth_views
+
 log = logging.getLogger(__name__)
 
 
@@ -68,6 +70,7 @@ def index(request):
     #  marketing and edge are enabled
 
     try:
+        
         return student_views.index(request, user=request.user)
     except NoReverseMatch:
         log.error(

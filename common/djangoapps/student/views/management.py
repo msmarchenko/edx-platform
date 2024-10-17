@@ -74,6 +74,9 @@ from common.djangoapps.util.db import outer_atomic
 from common.djangoapps.util.json_request import JsonResponse
 from xmodule.modulestore.django import modulestore
 
+from openedx.core.djangoapps.user_authn import views as auth_views
+
+
 log = logging.getLogger("edx.student")
 
 AUDIT_LOG = logging.getLogger("audit")
@@ -158,6 +161,11 @@ def index(request, extra_context=None, user=AnonymousUser()):
 
     # Add marketable programs to the context.
     context['programs_list'] = get_programs_with_type(request.site, include_hidden=False)
+
+    auth_context = auth_views.login_form.get_login_and_registration_form_context(request,initial_mode="login")
+
+
+    context =  {**context, **auth_context}
 
     return render_to_response('index.html', context)
 

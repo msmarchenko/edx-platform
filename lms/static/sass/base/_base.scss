@@ -305,3 +305,39 @@ mark {
     }
   }
 }
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates a 2-column grid */
+  gap: 20px; /* Space between grid items */
+}
+
+.grid-item {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+
+.accordion-info {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: background-color 0.4s;
+}
+
+.accordion-info:hover {
+  background-color: #ccc;
+}
+
+.panel-org-info {
+  padding: 0 10px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}

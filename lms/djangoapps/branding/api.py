@@ -283,6 +283,7 @@ def _footer_navigation_links(language=settings.LANGUAGE_CODE):
         ("contact", (_build_support_form_url(), _("Contact"))),
         ("careers", (marketing_link("CAREERS"), _("Careers"))),
        # ("donate", (marketing_link("DONATE"), _("Donate"))),
+        ("org_info", ("/org_info", _("Сведения об организации"))),
     ]
 
     #if language == settings.LANGUAGE_CODE:
@@ -305,9 +306,11 @@ def _footer_legal_links(language=settings.LANGUAGE_CODE):
 
     links = [
        # ("terms_of_service_and_honor_code", (marketing_link("TOS_AND_HONOR"), _("Terms of Service & Honor Code"))),
-        ("privacy_policy", (marketing_link("PRIVACY"), _("Privacy Policy"))),
+        #("privacy_policy", (marketing_link("PRIVACY"), _("Privacy Policy"))),
+        ("terms_of_service", (marketing_link("TOS"), _("Terms of Service"))),
        # ("accessibility_policy", (marketing_link("ACCESSIBILITY"), _("Accessibility Policy"))),
        # ("media_kit", (marketing_link("MEDIA_KIT"), _("Media Kit"))),
+      
     ]
 
     # Backwards compatibility: If a combined "terms of service and honor code"
@@ -317,6 +320,8 @@ def _footer_legal_links(language=settings.LANGUAGE_CODE):
         links.extend([
             ("terms_of_service", (marketing_link("TOS"), _("Terms of Service"))),
             #("honor_code", (marketing_link("HONOR"), _("Honor Code"))),
+            
+
         ])
 
     #if language == settings.LANGUAGE_CODE:
@@ -378,7 +383,7 @@ def _footer_more_info_links(language=settings.LANGUAGE_CODE):
 
     links = [
        # ("terms_of_service_and_honor_code", (marketing_link("TOS_AND_HONOR"), _("Terms of Service & Honor Code"))),
-        ("privacy_policy", (marketing_link("PRIVACY"), _("Privacy Policy"))),
+        #("privacy_policy", (marketing_link("PRIVACY"), _("Privacy Policy"))),
        # ("accessibility_policy", (marketing_link("ACCESSIBILITY"), _("Accessibility Policy"))),
     ]
 

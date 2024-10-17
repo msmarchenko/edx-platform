@@ -254,6 +254,120 @@ def login_and_registration_form(request, initial_mode="login"):
     return response
 
 
+def get_login_and_registration_form_context(request, initial_mode="login"):
+    """Render the combined login/registration form, defaulting to login
+
+    This relies on the JS to asynchronously load the actual form from
+    the user_api.
+
+    Keyword Args:
+        initial_mode (string): Either "login" or "register".
+
+    """
+
+    redirect_to = get_next_url_for_login_page(request)
+
+    # If we're already logged in, redirect to the dashboard
+    # Note: We check for the existence of login-related cookies in addition to is_authenticated
+    #  since Django's SessionAuthentication middleware auto-updates session cookies but not
+    #  the other login-related cookies. See ARCH-282.
+    if request.user.is_authenticated and are_logged_in_cookies_set(request):
+        return redirect(redirect_to)
+
+    # Retrieve the form descriptions from the user API
+    form_descriptions = _get_form_descriptions(request)
+
+    # Our ?next= URL may itself contain a parameter 'tpa_hint=x' that we need to check.
+    # If present, we display a login page focused on third-party auth with that provider.
+    third_party_auth_hint = None
+    if '?' in redirect_to:
+        try:
+            next_args = six.moves.urllib.parse.parse_qs(six.moves.urllib.parse.urlparse(redirect_to).query)
+            if 'tpa_hint' in next_args:
+                provider_id = next_args['tpa_hint'][0]
+                tpa_hint_provider = third_party_auth.provider.Registry.get(provider_id=provider_id)
+                if tpa_hint_provider:
+                    if tpa_hint_provider.skip_hinted_login_dialog:
+                        # Forward the user directly to the provider's login URL when the provider is configured
+                        # to skip the dialog.
+                        if initial_mode == "register":
+                            auth_entry = pipeline.AUTH_ENTRY_REGISTER
+                        else:
+                            auth_entry = pipeline.AUTH_ENTRY_LOGIN
+                        return redirect(
+                            pipeline.get_login_url(provider_id, auth_entry, redirect_url=redirect_to)
+                        )
+                    third_party_auth_hint = provider_id
+                    initial_mode = "hinted_login"
+        except (KeyError, ValueError, IndexError) as ex:
+            log.exception(u"Unknown tpa_hint provider: %s", ex)
+
+    # Redirect to logistration MFE if it is enabled
+    if should_redirect_to_logistration_mircrofrontend():
+        query_params = request.GET.urlencode()
+        url_path = '/{}{}'.format(
+            initial_mode,
+            '?' + query_params if query_params else ''
+        )
+        return redirect(settings.LOGISTRATION_MICROFRONTEND_URL + url_path)
+
+    # Account activation message
+    account_activation_messages = [
+        {
+            'message': message.message, 'tags': message.tags
+        } for message in messages.get_messages(request) if 'account-activation' in message.tags
+    ]
+
+    account_recovery_messages = [
+        {
+            'message': message.message, 'tags': message.tags
+        } for message in messages.get_messages(request) if 'account-recovery' in message.tags
+    ]
+
+    # Otherwise, render the combined login/registration page
+    context = {
+        'data': {
+            'login_redirect_url': redirect_to,
+            'initial_mode': initial_mode,
+            'third_party_auth': third_party_auth_context(request, redirect_to, third_party_auth_hint),
+            'third_party_auth_hint': third_party_auth_hint or '',
+            'platform_name': configuration_helpers.get_value('PLATFORM_NAME', settings.PLATFORM_NAME),
+            'support_link': configuration_helpers.get_value('SUPPORT_SITE_LINK', settings.SUPPORT_SITE_LINK),
+            'password_reset_support_link': configuration_helpers.get_value(
+                'PASSWORD_RESET_SUPPORT_LINK', settings.PASSWORD_RESET_SUPPORT_LINK
+            ) or settings.SUPPORT_SITE_LINK,
+            'account_activation_messages': account_activation_messages,
+            'account_recovery_messages': account_recovery_messages,
+
+            # Include form descriptions retrieved from the user API.
+            # We could have the JS client make these requests directly,
+            # but we include them in the initial page load to avoid
+            # the additional round-trip to the server.
+            'login_form_desc': json.loads(form_descriptions['login']),
+            'registration_form_desc': json.loads(form_descriptions['registration']),
+            'password_reset_form_desc': json.loads(form_descriptions['password_reset']),
+            'account_creation_allowed': configuration_helpers.get_value(
+                'ALLOW_PUBLIC_ACCOUNT_CREATION', settings.FEATURES.get('ALLOW_PUBLIC_ACCOUNT_CREATION', True)),
+            'is_account_recovery_feature_enabled': is_secondary_email_feature_enabled(),
+            'is_multiple_user_enterprises_feature_enabled': is_multiple_user_enterprises_feature_enabled(),
+            'enterprise_slug_login_url': get_enterprise_slug_login_url()
+        },
+        'login_redirect_url': redirect_to,  # This gets added to the query string of the "Sign In" button in header
+        'responsive': True,
+        'allow_iframing': True,
+        'disable_courseware_js': True,
+        'combined_login_and_register': True,
+        'disable_footer': False
+    }
+    enterprise_customer = enterprise_customer_for_request(request)
+    update_logistration_context_for_enterprise(request, context, enterprise_customer)
+
+    response = render_to_response('student_account/login_and_register.html', context)
+    handle_enterprise_cookies_for_logistration(request, response, context)
+
+    return context
+
+
 def _get_form_descriptions(request):
     """Retrieve form descriptions from the user API.
 
