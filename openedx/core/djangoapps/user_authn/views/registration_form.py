@@ -1003,7 +1003,7 @@ class RegistrationFormFactory(object):
         """
         # Translators: This is a legal document users must agree to
         # in order to register a new account.
-        terms_label = _(u"Terms of Service")
+        terms_label = _(u"Пользовательское соглашение") #_(u"Terms of Service")
         terms_link = marketing_link("TOS")
 
         # Translators: "Terms of service" is a legal document users must agree to
@@ -1011,7 +1011,7 @@ class RegistrationFormFactory(object):
         label = Text(_(u"I agree to the {platform_name} {tos_link_start}{terms_of_service}{tos_link_end}")).format(
             platform_name=configuration_helpers.get_value("PLATFORM_NAME", settings.PLATFORM_NAME),
             terms_of_service=terms_label,
-            tos_link_start=HTML(u"<a href='{terms_link}' rel='noopener' target='_blank'>").format(
+            tos_link_start=HTML(u"<a href='https://docs.google.com/document/d/1ehXeU3JdbbrWt_tzL1LphIF7GDZcF2SOoVWWJ95ziEI/edit?tab=t.0' rel='noopener' target='_blank'>").format(
                 terms_link=terms_link
             ),
             tos_link_end=HTML("</a>"),
