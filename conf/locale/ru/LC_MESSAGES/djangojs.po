@@ -5119,6 +5119,12 @@ msgid ""
 "or check your spam folder.{paragraphEnd}{paragraphStart}If you need further "
 "assistance, {anchorStart}contact technical support{anchorEnd}.{paragraphEnd}"
 msgstr ""
+"{paragraphStart}Вы ввели: {boldStart}{email}{boldEnd}."
+"Если этот адрес электронной почты связан с вашей учетной записью,"
+"мы отправим сообщение с инструкциями по восстановлению пароля на этот адрес электронной почты.{paragraphEnd}"
+"{paragraphStart}Если вы не получите сообщение о сбросе пароля в течение 1 минуты,"
+"убедитесь, что вы ввели правильный адрес электронной почты, или проверьте папку со спамом. {paragraphEnd}"
+
 
 #: lms/static/js/student_account/views/LoginView.js
 msgid ""
