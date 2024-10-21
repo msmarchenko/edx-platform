@@ -321,7 +321,7 @@ mark {
 
 .accordion-info {
   background-color: #eee;
-  color: #444;
+  color: #444;  /* #444; */
   cursor: pointer;
   padding: 10px;
   width: 100%;
@@ -340,4 +340,25 @@ mark {
   display: none;
   background-color: white;
   overflow: hidden;
+}
+
+.t1059__btn-img_md {
+  width: 30px;
+}
+
+#rec803121850 .t030__title {
+  font-size: 22px;
+  color: #383838;
+  font-weight: 600;
+}
+
+#rec803121848 .t030__title {
+  font-size: 22px;
+  color: #383838;
+  font-weight: 600;
+}
+
+.t1059__btn-img-wrapper {
+  display: table-cell;
+  vertical-align: middle;
 }

@@ -33,7 +33,7 @@ $course-search-input-height: ($button-size);
       position: relative;
       margin: 0 auto;
       padding: ($baseline*3);
-      max-width: ($baseline*60);
+    //*  max-width: ($baseline*60); */
 
       @include media($bp-tiny) {
         padding: ($baseline/2);
@@ -41,8 +41,8 @@ $course-search-input-height: ($button-size);
     }
 
     .title {
-      @include span-columns(8);
-      @include shift(2);
+     /* @include span-columns(8);
+      @include shift(2); */
 
       box-sizing: border-box;
 

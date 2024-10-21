@@ -27,6 +27,8 @@ from lms.djangoapps.branding.models import BrandingApiConfig
 from common.djangoapps.edxmako.shortcuts import marketing_link
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
 
+from django.test.utils import override_settings
+
 log = logging.getLogger("edx.footer")
 EMPTY_URL = '#'
 
@@ -300,14 +302,17 @@ def _footer_navigation_links(language=settings.LANGUAGE_CODE):
         if link_url and link_url != "#"
     ]
 
-
+#@override_settings(MKTG_URLS={'ROOT': 'https://dummy-root', 'TOS': '/tos_test'})
 def _footer_legal_links(language=settings.LANGUAGE_CODE):
     """Return the legal footer links (e.g. terms of service). """
 
     links = [
        # ("terms_of_service_and_honor_code", (marketing_link("TOS_AND_HONOR"), _("Terms of Service & Honor Code"))),
         #("privacy_policy", (marketing_link("PRIVACY"), _("Privacy Policy"))),
-        ("terms_of_service", (marketing_link("TOS"), _("Terms of Service"))),
+        
+        #("terms_of_service",  (marketing_link("TOS"), _("Пользовательское соглашение"))),
+
+        ("terms_of_service", ("https://docs.google.com/document/d/1ehXeU3JdbbrWt_tzL1LphIF7GDZcF2SOoVWWJ95ziEI/edit?usp=sharing", _("Пользовательское соглашение"))),
        # ("accessibility_policy", (marketing_link("ACCESSIBILITY"), _("Accessibility Policy"))),
        # ("media_kit", (marketing_link("MEDIA_KIT"), _("Media Kit"))),
       
@@ -318,7 +323,8 @@ def _footer_legal_links(language=settings.LANGUAGE_CODE):
     tos_and_honor_link = marketing_link("TOS_AND_HONOR")
     if not (tos_and_honor_link and tos_and_honor_link != "#"):
         links.extend([
-            ("terms_of_service", (marketing_link("TOS"), _("Terms of Service"))),
+            ("terms_of_service", ("https://docs.google.com/document/d/1ehXeU3JdbbrWt_tzL1LphIF7GDZcF2SOoVWWJ95ziEI/edit?usp=sharing", _("Пользовательское соглашение"))),
+            #("terms_of_service", (marketing_link("TOS"), _("Terms of Service"))),
             #("honor_code", (marketing_link("HONOR"), _("Honor Code"))),
             
 
@@ -392,7 +398,8 @@ def _footer_more_info_links(language=settings.LANGUAGE_CODE):
     tos_and_honor_link = marketing_link("TOS_AND_HONOR")
     if not (tos_and_honor_link and tos_and_honor_link != "#"):
         links.extend([
-            ("terms_of_service", (marketing_link("TOS"), _("Terms of Service"))),
+            ("terms_of_service", ("https://docs.google.com/document/d/1ehXeU3JdbbrWt_tzL1LphIF7GDZcF2SOoVWWJ95ziEI/edit?usp=sharing", _("Пользовательское соглашение"))),
+            #("terms_of_service", (marketing_link("TOS"), _("Terms of Service"))),
             ("honor_code", (marketing_link("HONOR"), _("Honor Code"))),
         ])
 
