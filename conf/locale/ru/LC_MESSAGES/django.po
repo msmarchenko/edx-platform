@@ -21669,7 +21669,7 @@ msgstr "Мой профиль"
 #: openedx/features/learner_profile/templates/learner_profile/learner_profile.html
 msgid ""
 "Build out your profile to personalize your identity on {platform_name}."
-msgstr ""
+msgstr "Создайте свой профиль, чтобы персонализировать свою личность на {platform_name}."
 
 #: openedx/features/learner_profile/templates/learner_profile/learner_profile.html
 msgid "An error occurred. Try loading the page again."

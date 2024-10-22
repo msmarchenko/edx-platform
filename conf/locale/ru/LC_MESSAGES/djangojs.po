@@ -4967,7 +4967,7 @@ msgstr ""
 #: lms/static/js/student_account/components/StudentAccountDeletion.jsx
 msgid ""
 "{htmlStart}Want to change your email, name, or password instead?{htmlEnd}"
-msgstr ""
+msgstr "{htmlStart}Хотите вместо этого сменить свой адрес электронной почты, имя или пароль?{htmlEnd}"
 
 #: lms/static/js/student_account/components/StudentAccountDeletion.jsx
 msgid ""
@@ -4976,6 +4976,9 @@ msgid ""
 "{strongStart}you will no longer be able to use the same email on "
 "{platformName}.{strongEnd}"
 msgstr ""
+"{strongStart}Предупреждение: Удаление учетной записи является необратимым. {strongEnd} Пожалуйста, прочтите "
+"внимательно прочтите все вышесказанное, прежде чем продолжить."
+
 
 #: lms/static/js/student_account/components/StudentAccountDeletion.jsx
 msgid ""
@@ -4983,12 +4986,16 @@ msgid ""
 "cannot be undone. {platformName} will not be able to recover your account or"
 " the data that is deleted."
 msgstr ""
+"Пожалуйста, обратите внимание: удаление вашей учетной записи и персональных данных является необратимым и "
+"не может быть отменено."
 
 #: lms/static/js/student_account/components/StudentAccountDeletion.jsx
 msgid ""
 "Once your account is deleted, you cannot use it to take courses on the "
 "{platformName} app, {siteName}, or any other site hosted by {platformName}."
 msgstr ""
+"Как только ваша учетная запись будет удалена, вы не сможете использовать ее для прохождения курсов в приложении "
+"{platformName}, {siteName} или на любом другом сайте, размещенном на {platformName}."
 
 #: lms/static/js/student_account/components/StudentAccountDeletion.jsx
 #: lms/static/js/student_account/components/StudentAccountDeletionModal.jsx
@@ -4999,7 +5006,7 @@ msgstr ""
 
 #: lms/static/js/student_account/components/StudentAccountDeletion.jsx
 msgid "We’re sorry to see you go!"
-msgstr ""
+msgstr "Нам жаль, что вы уходите!"
 
 #: lms/static/js/student_account/components/StudentAccountDeletion.jsx
 #: lms/static/js/student_account/views/account_settings_factory.js
@@ -5695,7 +5702,7 @@ msgstr[3] ""
 
 #: openedx/features/learner_profile/static/learner_profile/js/learner_profile_factory.js
 msgid "Profile Visibility:"
-msgstr ""
+msgstr "Видимость профиля:"
 
 #: openedx/features/learner_profile/static/learner_profile/js/learner_profile_factory.js
 msgid "Limited Profile"
