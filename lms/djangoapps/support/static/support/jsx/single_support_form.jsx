@@ -220,11 +220,8 @@ class RenderForm extends React.Component {
 
         <div className="row">
           <div className="col-sm-12"> 
-            <p> <a href="https://robbo.ru/"> https://robbo.ru/ </a>  - главный сайт компании и проектов РОББО </p>
-            <p> <a href="https://support.robbo.ru"> https://support.robbo.ru</a> - портал поддержки РОББО </p>
-            <p> <a href="https://wiki.robbo.ru/"> https://wiki.robbo.ru/ </a> - wiki РОББО </p>
-            <p> <a href="https://robbo.ru/olymp/"> https://robbo.ru/olymp/ </a> -  российский национальный отборочный этап международной Scratch-Олимпиады по креативному программированию </p>
-            <p> Свяжитесь с нами: <a href="mailto:support@robbo.ru"> support@robbo.ru </a> </p>
+            <p> Наш сайт: <a href="https://edurobbo.ru"> https://edurobbo.ru </a>  </p>
+            <p> Служба поддержки:  <a href="mailto:info@online.edurobbo.ru"> info@online.edurobbo.ru</a> </p>
           </div>
         </div>
 
