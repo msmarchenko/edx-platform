@@ -1363,7 +1363,7 @@ sphinxcontrib-httpdomain==1.8.0
     # via sphinxcontrib-openapi
 sphinxcontrib-jsmath==1.0.1
     # via sphinx
-sphinxcontrib-openapi[markdown]==0.6.0
+#sphinxcontrib-openapi[markdown]==0.6.0
     # via -r requirements/edx/development.in
 sphinxcontrib-qthelp==1.0.3
     # via sphinx
