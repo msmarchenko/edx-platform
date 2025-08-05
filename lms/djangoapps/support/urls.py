@@ -6,6 +6,7 @@ URLs for the student support app.
 from django.conf.urls import url
 
 from .views.contact_us import ContactUsView
+from .views.license import LicAboutView
 from .views.certificate import CertificatesSupportView
 from .views.course_entitlements import EntitlementSupportView
 from .views.enrollments import EnrollmentSupportListView, EnrollmentSupportView
@@ -24,6 +25,7 @@ urlpatterns = [
     url(r'^enrollment/?$', EnrollmentSupportView.as_view(), name="enrollment"),
     url(r'^course_entitlement/?$', COURSE_ENTITLEMENTS_VIEW, name="course_entitlement"),
     url(r'^contact_us/?$', ContactUsView.as_view(), name="contact_us"),
+    url(r'^license/?$', LicAboutView.as_view(), name="license"),
     url(
         r'^enrollment/(?P<username_or_email>[\w.@+-]+)?$',
         EnrollmentSupportListView.as_view(),
